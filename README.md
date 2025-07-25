@@ -1,5 +1,9 @@
-# PROG8850Week1Installation
-install mysql, python
+# PROG8850-finalassignment
+weather database
+
+Add https://github.com/rhildred/docker-infra as a submodule to this and follow the instructions on eConestoga. 
+
+## Notes
 
 ```bash
 ansible-playbook up.yml
