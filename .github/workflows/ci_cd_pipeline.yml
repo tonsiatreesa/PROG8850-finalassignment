@@ -98,6 +98,19 @@ jobs:
           echo "Starting concurrent query execution tests..."
           chmod +x scripts/multi_thread_queries.py
           python3 scripts/multi_thread_queries.py
+      
+      # 5.5. Feed logs to Signoz
+      - name: Feed logs to Signoz
+        env:
+          DB_HOST: ${{ env.DB_HOST }}
+          DB_USER: ${{ env.DB_USER }}
+          DB_PASSWORD: ${{ env.DB_PASSWORD }}
+          DB_NAME: ${{ env.DB_NAME }}
+          DB_PORT: ${{ env.DB_PORT }}
+        run: |
+          echo "Running signoz.py to feed logs to Signoz..."
+          python3 signoz.py
+          echo "✅ Logs sent to Signoz"
           echo "✅ Concurrent queries executed successfully"
 
       # 6. Validation Step
