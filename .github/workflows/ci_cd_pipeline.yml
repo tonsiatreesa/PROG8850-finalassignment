@@ -41,6 +41,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y mysql-client python3 python3-pip
           pip3 install mysql-connector-python
+          pip3 install opentelemetry-api opentelemetry-sdk opentelemetry-exporter-otlp-proto-grpc
 
       - name: Verify MySQL Service
         run: |
